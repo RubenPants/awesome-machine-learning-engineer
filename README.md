@@ -62,44 +62,73 @@ ShellHarden & ShellCheck https://github.com/anordal/shellharden/blob/master/how_
 
 Terraform best practices https://github.com/BWITS/terraform-best-practices
 
-
 ## Tanguy Notes for guide-book
 
-### Conda must have
+### environment.yml skeleton for new projects
 
-* Install python packages to Conda env
-  * ```flake8``` for linting
-  * ```pip install pyre-check``` for type-checking
+```yml
+name: "your conda environmnent name"
+channels:
+ - defaults
+ - conda-forge
+dependencies:
+ - flake8  # linting
+  - mypy  # linting and type-checking
+ - autopep8  # python code auto-formating
+ - pip:
+    - pyre-check  # type-checking
+# perhaps add the code-complexity package
+```
 
-### VScode installation
+Create the environment by opening a terminal and typing:
+
+```bash
+conda env create -f environment.yml
+```
+
+### VScode set-up
 
 * install [VScode](https://code.visualstudio.com/)
 * install VScode extensions
   * Python
   * markdownlint
-  * ```pyre-vscode``` to enable typechecking in workspace with ```.pyre_configuration``` file
   * pyre-vscode
-* Set python conda env in VScode
+* If conda env not automatically detected, set it manually:
   * go in ```user settings```
   * find ```"python.pythonPath"``` line
-  * edit it in user settings to point to good interpreter
+  * edit it to point to good python bin
+* Minimum user settings
 
-### slack
+  ```python
+  {
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "autopep8"
+  }
+  ```
 
-https://radix-ai.slack.com
-communication tool to increase internal communications signal to noise ratio.
+### project set-up
 
-### Agile
+A project should contain at least the following files:
 
-Software development manifesto that basically describes principles for daily roadmap.
+* `.gitignore`
+* `README.md`
 
-Radix.ai uses *scrum* channel, which contains 3 lines:
+Activate pyre type-checking by opening a terminal in the project-root and type ```pyre init```.
+
+### Slack
+
+Communication tool used by [radix.ai](https://radix-ai.slack.com) to increase internal communications signal to noise ratio.
+
+#### Scrum
+
+On slack, the radix.ai **scrum** channel is inspired by the AGILE Software development manifesto that basically describes principles for daily roadmaps.
+
+At the end of the day, use the *scrum* channel to convey, on 3 lines:
 
 * job done today:
 * job to do tomorrow:
 * what is currently blocking:
-
-### Basic project
-
-* yaml install file (don't forget flake8 to be installed)
-* .gitignore
