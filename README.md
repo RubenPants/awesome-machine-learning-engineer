@@ -61,3 +61,45 @@ ShellHarden & ShellCheck https://github.com/anordal/shellharden/blob/master/how_
 ### Terraform
 
 Terraform best practices https://github.com/BWITS/terraform-best-practices
+
+
+## Tanguy Notes for guide-book
+
+### Conda must have
+
+* Install python packages to Conda env
+  * ```flake8``` for linting
+  * ```pip install pyre-check``` for type-checking
+
+### VScode installation
+
+* install [VScode](https://code.visualstudio.com/)
+* install VScode extensions
+  * Python
+  * markdownlint
+  * ```pyre-vscode``` to enable typechecking in workspace with ```.pyre_configuration``` file
+  * pyre-vscode
+* Set python conda env in VScode
+  * go in ```user settings```
+  * find ```"python.pythonPath"``` line
+  * edit it in user settings to point to good interpreter
+
+### slack
+
+https://radix-ai.slack.com
+communication tool to increase internal communications signal to noise ratio.
+
+### Agile
+
+Software development manifesto that basically describes principles for daily roadmap.
+
+Radix.ai uses *scrum* channel, which contains 3 lines:
+
+* job done today:
+* job to do tomorrow:
+* what is currently blocking:
+
+### Basic project
+
+* yaml install file (don't forget flake8 to be installed)
+* .gitignore
