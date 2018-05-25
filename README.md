@@ -106,7 +106,10 @@ conda env create -f environment.yml
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
     "editor.formatOnSave": true,
-    "python.formatting.provider": "autopep8"
+    "python.formatting.provider": "autopep8",
+    "editor.rulers": [
+        79
+    ]
   }
   ```
 
@@ -122,6 +125,7 @@ Activate pyre type-checking by opening a terminal in the project-root and type `
 ### radix.ai style
 
 * Documentation: google style
+* Policy regarding sanity checks: assert vs raise vs type-checking? type checking cannot supplant assert or raise, but can replace trivial types case.
 
 ### Slack
 
