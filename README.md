@@ -119,6 +119,10 @@ A project should contain at least the following files:
 
 Activate pyre type-checking by opening a terminal in the project-root and type ```pyre init```.
 
+### radix.ai style
+
+* Documentation: google style
+
 ### Slack
 
 Communication tool used by [radix.ai](https://radix-ai.slack.com) to increase internal communications signal to noise ratio.
@@ -132,3 +136,6 @@ At the end of the day, use the *scrum* channel to convey, on 3 lines:
 * job done today:
 * job to do tomorrow:
 * what is currently blocking:
+
+#### Flask
+
